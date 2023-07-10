@@ -1,0 +1,23 @@
+.home-container{
+      padding: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.trenz-home-image{
+      width: 50%;
+      max-width: 450px;
+      margin-left: 85px;
+}
+.home-page-heading{
+      font-size: 46px;
+      text-align: left;
+}
+.home-page-description{
+      font-family: 'Roboto';
+      margin-top: 36px;
+      font-size: 18px;
+      color: #64748b;
+      font-family: "Roboto";
+      text-align: left;
+}

@@ -1,0 +1,23 @@
+.nav-container{
+      border-bottom: 1px solid #bfbfbf;
+      padding: 10px 50px;
+      display: flex;
+      justify-content: space-between;
+}
+.website-logo{
+      width: 165px;
+      height: 45px;
+}
+.nav-items-container{
+     display: flex;
+     align-items: center;
+}
+.nav-item{
+      margin: 6px;
+      color: #475569;
+      font-family: "Roboto";
+      font-size: 18px;
+}
+.nav-link{
+      text-decoration: none;
+}
