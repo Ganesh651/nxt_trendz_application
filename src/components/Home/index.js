@@ -1,11 +1,14 @@
-import {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Navigate} from 'react-router-dom'
+import Cookies  from 'js-cookie'
 import Header from '../Header'
 import './index.css'
 
-class Home extends Component{
-      render(){
-            return <>
+const Home = ()=>{
+            const jwtToken = Cookies.get("jwt_token")
+            if (jwtToken === undefined){
+            return <Navigate replace to="/login" />
+            }
+            return (<>
             <Header/>
             <div className='home-container'>
                   <div>
@@ -16,7 +19,8 @@ class Home extends Component{
                   <img className='trenz-home-image' src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png" alt="clothes that get you noticed" />
             </div>
             </>
-      }
+     ) 
 }
+
 
 export default Home

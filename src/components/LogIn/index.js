@@ -1,9 +1,10 @@
 import {useState} from "react"
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Navigate } from 'react-router-dom'
+// import {withRouter}  from 'react-dom'
 import Cookies from 'js-cookie'
 import './index.css'
 
-const LogIn = (props)=>{ 
+const LogIn = ()=>{ 
       const [username, setUsername] = useState("")
       const [password, setPassword] = useState("")
       const [showErrorMessage, setShowErrorMessage] = useState(false)
@@ -20,7 +21,7 @@ const LogIn = (props)=>{
 
       const onSuccessView = jwtToken =>{
             Cookies.set("jwt_token", jwtToken, {expires:10})
-           navigate("/", {replace:true})
+           navigate("/")
       }
 
     const  onFailureView = (errorMessage)=>{
@@ -45,6 +46,10 @@ const LogIn = (props)=>{
             }else{
                   onFailureView(data.error_msg)
             }
+      }
+      const jwtToken = Cookies.get("jwt_token")
+      if(jwtToken !== undefined){
+           return <Navigate replace to="/" />
            
       }
             return (
